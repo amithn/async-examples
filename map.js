@@ -1,12 +1,12 @@
 
     var async = require('async');
 
-
     function mapper(value, callback) {
         if( typeof(value) === 'string') {
             callback(null, value.toUpperCase());
         } else {
-            callback(value + ' is not a string', null);
+            var err = value + ' is not a string';
+            callback(err, null);
         }
     }
 

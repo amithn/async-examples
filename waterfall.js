@@ -4,24 +4,26 @@
 
     function download(link, callback) {
         console.log('Finished downloading from ' + link);
-        callback(null, 'content from the website'); 
+        callback(null, 'node.js is awesome'); 
     }
 
-    function index(content, callback) {
-        console.log('Indexing content from site - ' + content);
+    function split(content, callback) {
+        console.log('Splitting content from site - ' + content);
         var splits = content.split(' ');
         callback(null, splits);
     }
 
-    function storeIndex(splits, callback) {
-        console.log('Storing index for splits - ' + splits);
+    function storeSplits(splits, callback) {
+        console.log('Storing splits - ' + splits);
         callback(null, splits.length); 
     }
 
-    var link = 'http://www.wiki/node';
+    var link = 'http://www.wiki/nodejs';
+    
     async.waterfall([ async.apply(download, link),
-                      index,
-                      storeIndex], function(err, numsplits) {
-                    
-                      console.log('We got ' + numsplits + ' new words to index from ' + link);                    
+                      split,
+                      storeSplits], function(err, numsplits) {
+                      
+                      console.log('We got ' + numsplits + 
+                                                    ' new words to index from ' + link);                    
     });

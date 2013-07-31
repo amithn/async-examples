@@ -7,7 +7,6 @@
             setTimeout(function() {
                 console.log('Done' + ' downloading ' + link);
                 callback();
-                return;
             },1000);
         } else {
             console.log('Done' + ' downloading ' + link);
@@ -17,7 +16,6 @@
 
     var links = ['http://one.com', 'http://two.com', 'http://three.com'];
     
-
     async.eachSeries(links, download, function(err) {
         if(!err) {
             console.log('Finished downloading');

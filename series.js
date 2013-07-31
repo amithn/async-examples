@@ -17,9 +17,6 @@
         callback(null, 'Took 2 seconds to stop ' + vehicle);
     }
 
-    function splitter(line,callback) {
-        callback(null, line + '\n');
-    }
 
     var vehicle = 'Car';
     var speed = 100;
@@ -28,7 +25,8 @@
                    async.apply(drive, vehicle, speed),
                    async.apply(stop, vehicle)], function(err, results) {
                        if(!err) {
-                                      console.log('---------- Done ----------- \n' + results);
+                                      console.log('---------- Done -----------');
+                                      console.log('Results look like this: ' + results);
                        } else {
                             console.log('Something went wrong - handling it');
                        }
