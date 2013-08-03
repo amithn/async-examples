@@ -30,7 +30,7 @@
         });
     });
 
-    downloadIndexStoreLink('http://downloader.com/some.pdf', function(err, results){
+    downloadIndexStoreLink('http://downloader.com/somelink', function(err, results){
         console.log('Done');
     });
     
